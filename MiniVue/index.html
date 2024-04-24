@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <span w-text="message"></span>
+        <br>
+        <input type="text"  w-model="message">
+        <input type="text"  w-model="message">
+        <img w-bind="src:image" />
+        <span w-text="image"></span>
+        <br>
+        <input type="text"  w-model="image">
+    </div>
+
+    <script src="./walo.js"></script>
+    <script>
+        const {createApp} = Walo;
+        const app = createApp({
+            data() {
+                return {
+                    message: "Hope with 'Walo'",
+                    image: "https://i.pinimg.com/564x/59/54/61/59546197baae43e5cd4612bbe1d4424d.jpg"
+                }
+            }
+        });
+        app.mount();
+    </script>
+</body>
+</html>
